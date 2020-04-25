@@ -1,0 +1,7 @@
+{
+  "name": "radio-ibpr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
