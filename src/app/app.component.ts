@@ -18,32 +18,21 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Outbox',
+      title: 'Contactos',
       url: '/folder/Outbox',
-      icon: 'paper-plane'
+      icon: 'mail-outline'
     },
     {
-      title: 'Favorites',
+      title: 'Web',
       url: '/folder/Favorites',
-      icon: 'heart'
+      icon: 'earth-outline'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Facebook',
+      url: 'https://www.facebook.com/iglesiabautistapanambireta',
+      icon: 'logo-facebook'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,

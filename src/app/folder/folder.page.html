@@ -3,19 +3,54 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Radio IBPR</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="fijo" *ngIf="reproduciendo">
+      <ion-col>
+        <p>{{reproduciendo}}</p>
+      </ion-col>
+    </ion-row>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row class="fijo">
+      <ion-col size>
+        <ion-icon color="primary" name="{{nameIcon}}" (click)="play_music()" ></ion-icon>
+        <ion-range ngModel="progress" max="50" color="success"></ion-range>
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="podcast">
+      <ion-col>
+        <ion-list>
+          <ion-list-header>
+            Podcast
+          </ion-list-header>
+          <ion-item>
+            uno
+          </ion-item>
+          <ion-item>
+            dos
+          </ion-item>
+          <ion-item>
+            tres
+          </ion-item>
+          <ion-item>
+            cuatro
+          </ion-item>
+          <ion-item>
+            cinco
+          </ion-item>
+          <ion-item>
+            sies
+          </ion-item>
+          <ion-item>
+            siete
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
