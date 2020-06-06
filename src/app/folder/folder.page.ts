@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Sounds } from '../sounds';
-import {Howl, Howler} from 'howler';
 
 
 @Component({
@@ -12,9 +11,9 @@ import {Howl, Howler} from 'howler';
 export class FolderPage implements OnInit {
   public folder: string;
   public nameIcon: String;
-  public playSound: boolean ;
+  public playSound: boolean;
   public reproduciendo: string;
-  public playList: Sounds[]  = [
+  public playList: Sounds[] = [
     {
       id: 1,
       name: 'Si no llenamos la Tierra',
@@ -44,70 +43,41 @@ export class FolderPage implements OnInit {
       duracion: '4:32'
     }
 
-    
   ];
-  
-  sound: Howl = null;
-  activeTrack: Sounds = null;
 
-  constructor(private activatedRoute: ActivatedRoute) {  }
+  // sound: Howl = null;
+  activeTrack: Sounds = null;
+  sound: any;
+  volumen: number;
+  // sound.src = ;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    //Extrae el parametro de la URL
+    // Extrae el parametro de la URL
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.nameIcon = 'play-circle-outline';
     this.playSound = false;
+    this.sound = new Audio();
+    this.volumen = 50;
+    this.sound.volume = (this.volumen / 100);
   }
+  // this.nameIcon = 'stop-circle-outline';
 
-  mute() {
-    this.sound.mute(true);
-  } 
-  
-  no_mute() {
-    this.sound.mute(false);
-  }
+  // this.nameIcon = 'play-circle-outline';
 
   play_music() {
+    this.sound.src = "assets/canciones/Santiago_Benavides1.mp3";
+    this.sound.currentTime = 70;
 
-    //Si no esta reproduciendo
-    if(!this.playSound) {
-
-      this.playSound = true;
-
-      //Si existe y una cancion y solo esta pausa
-      if(this.sound) {
-        this.no_mute();
-
-      }else {
-        for(let i=0;i< this.playList.length;i++) {
-          this.reproduce(i);
-          this.sound.on('end', ()=>{
-            console.log('Termino la ultima musica ' + i);
-          });
-        }
-        this.sound.play();
-      }
-
-    }else {
-      this.mute();
-      this.nameIcon = 'play-circle-outline';
-      this.playSound = false;            
-    }
+    this.sound.play();
+    console.log('El nombre del icono es ' + this.nameIcon);
   }
 
-  reproduce(index) {
-    this.sound = new Howl({
-      src: [this.playList[index].url],
-      onplay: ()=> {
-        this.reproduciendo = this.playList[index].name + ' - ' + this.playList[index].artist;
-        this.nameIcon = 'stop-circle-outline';
-        this.playSound = true;
-      }
-      /*onend: ()=> {
-        
-        this.nameIcon = 'play-circle-outline';
-      }*/
-    });
+  set_volumen(event) {
+    console.log(event.detail.value);
+    this.volumen = event.detail.value;
+    this.sound.volume = (this.volumen / 100);
   }
 
 }

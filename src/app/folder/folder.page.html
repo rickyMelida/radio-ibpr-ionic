@@ -18,7 +18,13 @@
     <ion-row class="fijo">
       <ion-col size>
         <ion-icon color="primary" name="{{nameIcon}}" (click)="play_music()" ></ion-icon>
-        <ion-range ngModel="progress" max="50" color="success"></ion-range>
+        <ion-range 
+          (ionChange)="set_volumen($event)"
+          min="1" 
+          max="100"  
+          color="success"
+          [value]="volumen"
+          ></ion-range>
       </ion-col>
     </ion-row>
 

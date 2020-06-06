@@ -1,0 +1,64 @@
+{
+    "2020-10-21": [
+        {
+            "pos": 1,
+            "nombre": "Si no llenamos la tierra",
+            "artista": "Santiago Benavides",
+            "tipo_audio": "Lento",
+            "duracion": "04:30",
+            "hora_rep": "00:04:30"
+        },
+        {
+            "pos": 2,
+            "nombre": "En el cielo no hay hospital",
+            "artista": "Juan Luis Guerra",
+            "tipo_audio": "Movido",
+            "duracion": "04:10",
+            "hora_rep": "00:04:30"
+        }
+    ],
+    "2020-10-22": [
+        {
+            "pos": 1,
+            "nombre": "Si no llenamos la tierra",
+            "artista": "Santiago Benavides",
+            "tipo_audio": "Lento",
+            "duracion": "04:30",
+            "hora_rep": "00:04:30"
+        },
+        {
+            "pos": 2,
+            "nombre": "En el cielo no hay hospital",
+            "artista": "Juan Luis Guerra",
+            "tipo_audio": "Movido",
+            "duracion": "04:10",
+            "hora_rep": "00:04:30"
+        }
+    ],
+    "2020-10-23": [
+        {
+            "pos": 1,
+            "nombre": "Dios Eterno",
+            "artista": "Hillsong",
+            "tipo_audio": "Lento",
+            "duracion": "04:45",
+            "hora_rep": "00:04:30"
+        },
+        {
+            "pos": 2,
+            "nombre": "Sin Ti",
+            "artista": "Alex Zurdo",
+            "tipo_audio": "Movido",
+            "duracion": "04:25",
+            "hora_rep": "00:04:30"
+        },
+        {
+            "pos": 3,
+            "nombre": "Tengo Victoria",
+            "artista": "Alex Zurdo",
+            "tipo_audio": "Movido",
+            "duracion": "03:25",
+            "hora_rep": "00:04:30"
+        }
+    ]
+}
